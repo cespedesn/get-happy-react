@@ -11,3 +11,36 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+#QuoteMain {
+ width: 100%;
+ display: flex;
+
+ justify-content: center;
+}
+
+
+#NavBar {
+  width: 100%;
+  height: 5%;
+
+  display: flex;
+  position: fixed;
+  bottom: 10px;
+  
+  background-color: black;
+  justify-content: space-evenly;
+}
+.NavButtons {
+  width: 10%;
+}
+
+.Button {
+  width: 100%;
+  height: 100%;
+}
+
+.btn-success{
+  background-color: brown;
+}
