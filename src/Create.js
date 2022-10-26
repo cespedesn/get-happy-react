@@ -3,8 +3,8 @@ import React, { useState } from 'react'
 
 export default function Create({userQuotes, setUserQuotes}) {
     const [form, setForm] = useState({
-        author: "",
-        content: ""
+        person: "",
+        quote: ""
       })
     
       function handleChange(e){
@@ -12,10 +12,6 @@ export default function Create({userQuotes, setUserQuotes}) {
          ...form, 
         [e.target.name]: e.target.value})
       }
-
-
-     
-      
     
       function handleSubmit(e){
         e.preventDefault()
@@ -41,15 +37,15 @@ console.log("damn dro")
         <form className="new-quote-form" onSubmit={handleSubmit}>
             <input 
             placeholder="Author"
-            value={form.author}
-            name="author"
+            value={form.person}
+            name="person"
             onChange={handleChange}
             />
             <textarea 
             placeholder="Write your quote here..." 
             rows={10} 
-            value={form.content}
-            name="content"
+            value={form.quote}
+            name="quote"
             onChange={handleChange}
             />
             <input 

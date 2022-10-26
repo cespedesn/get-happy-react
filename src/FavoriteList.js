@@ -1,6 +1,7 @@
 import React from 'react'
 import FavoriteTile from './FavoriteTile'
 
+
 function FavoriteList({ favorites, handleDelete }) {
     if(!favorites || favorites.length === 0 ){return null}
      const yourItems = favorites.map((favorite) => {
@@ -14,8 +15,9 @@ function FavoriteList({ favorites, handleDelete }) {
            )
        } )
      return (
-         <div className='grid-bookmark'>
-         {yourItems}
+         <div className='quoteGrid'>
+          
+          {yourItems}
          </div>
      )
    }

@@ -9,8 +9,6 @@ export default function Quote({ quote }) {
    function handleFavorite(){
       setHeartClick(heartClick => !heartClick)
       setFavorites(quote)
-      console.log(quote)
-      console.log(favorites)
      
       fetch(`http://localhost:9292/quotes/${quote.id}`,{
       method: 'PUT',
@@ -27,13 +25,13 @@ export default function Quote({ quote }) {
 //       method: "DELETE"
 //   })
   }
-console.log(quote)
   return (
     // background img circle
     <div id='QuoteMain'> 
       <div id='boxAroundQuote'> 
        <div id='quoteDiv'>
          <h1>{quote.text_content}</h1>
+         <h3>~{quote.author.name}</h3>
        </div>
        
        <div id='buttonsBelowQuote'>

@@ -12,11 +12,13 @@ import Favorite from './Favorite';
 import Create from './Create';
 import Explore from './Explore';
 import { useLocation } from 'react-router'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   const [quote, setQuote] = useState([])
   const [userQuotes, setUserQuotes] =useState([])
   const location = useLocation()
+  const [favoriteQuoteData, setFavoriteQuoteData] = useState([])
 
   useEffect(() => {
    
@@ -29,7 +31,7 @@ function App() {
         headers: {
           "Content-Type": 'application/json',
         },
-        body: JSON.stringify({text_content: quote.quote})
+        body: JSON.stringify(quote)
       }).then((r) => r.json())
       .then(quote => {
       setQuote(quote)
@@ -38,6 +40,9 @@ function App() {
     
 }, [location.key]);
 
+const favoriteTileData = fetch('https://motivational-quote-api.herokuapp.com/quotes')
+.then(r => r.json())
+.then(setFavoriteQuoteData); 
 
 
   return (

@@ -17,7 +17,6 @@ function handleDelete(id){
     setFavorites(newFavorites)
 }
 
- console.log(favorites, "over here")
   return (
     <div>Favorite
         <FavoriteList favorites={favorites} handleDelete={handleDelete}/>
