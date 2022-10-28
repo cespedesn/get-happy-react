@@ -16,7 +16,6 @@ function FavoriteList({ favorites, handleDelete }) {
        } )
      return (
          <div className='quoteGrid'>
-          
           {yourItems}
          </div>
      )

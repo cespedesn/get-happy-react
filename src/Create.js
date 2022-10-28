@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 
-export default function Create({userQuotes, setUserQuotes}) {
+export default function Create({allQuotes, setAllQuotes}) {
     const [form, setForm] = useState({
         person: "",
         quote: ""
@@ -25,15 +25,15 @@ export default function Create({userQuotes, setUserQuotes}) {
         })
            .then(resp => resp.json())
           .then(data => {
-            setForm({...form, data})
-            console.log(data)
+            setForm({data,...form})
+            setAllQuotes([...allQuotes, data])
           })
       }
-console.log("damn dro")
+
        
   return (
-    <div>
-        {/* Create, this will be a form to make  a new quote */}
+    <div className = 'form-div'>
+        
         <form className="new-quote-form" onSubmit={handleSubmit}>
             <input 
             placeholder="Author"

@@ -5,7 +5,7 @@ export default function Quote({ quote }) {
    const [heartClick, setHeartClick] = useState(false)
    const [favorites, setFavorites] = useState([])
 
-
+    console.log(quote)
    function handleFavorite(){
       setHeartClick(heartClick => !heartClick)
       setFavorites(quote)
@@ -25,22 +25,26 @@ export default function Quote({ quote }) {
 //       method: "DELETE"
 //   })
   }
+  
   return (
-    // background img circle
-    <div id='QuoteMain'> 
-      <div id='boxAroundQuote'> 
-       <div id='quoteDiv'>
-         <h1>{quote.text_content}</h1>
-         <h3>~{quote.author.name}</h3>
-       </div>
-       
-       <div id='buttonsBelowQuote'>
-        <button 
-          className={heartClick === true ? 'btn-success' :null}
-          onClick={() => handleFavorite()}
-          >< AiOutlineHeart /></button>
-       </div>
+   <div id='quote-bar'>
+      <div id='QuoteMain'> 
+        <div id='boxAroundQuote'> 
+        <div id='quoteDiv'>
+          <h1>{quote.quote}</h1>
+          <h2>-{quote.person}</h2>
+        </div>
+        
+        <div id='buttonsBelowQuote'>
+          <button 
+            className={heartClick === true ? 'btn-success' :null}
+            onClick={() => handleFavorite()}
+            >< AiOutlineHeart /></button>
+        </div>
+        </div>
       </div>
-    </div>
+    </div>  
   )
+  
 }
+

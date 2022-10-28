@@ -18,7 +18,7 @@ function handleDelete(id){
 }
 
   return (
-    <div>Favorite
+    <div className='fav-div'><h1 className='favorite-header'>Favorites</h1>
         <FavoriteList favorites={favorites} handleDelete={handleDelete}/>
     </div>
   )

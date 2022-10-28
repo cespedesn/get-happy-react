@@ -7,17 +7,21 @@ import Card from "react-bootstrap/Card";
 
 export default function FavoriteTile({favorite, handleDelete}) {
   return (
-    <Card style={ { width: '12rem', margin: '1rem'}}>
-      <Card.Body>
-        <Card.Text>
-       
-          {favorite.text_content}
-          <br/>
-          <br/>
-          -{favorite.auhtor}
-          <button onClick={() => handleDelete(favorite.id)}><FaRegTrashAlt /></button>
-         </Card.Text>
+    <Card style={ { width: '12rem', margin: '3rem'}}>
+      <Card.Body className='outer-card'>
+        <Card.Body className='inner-card'>
+          <Card.Text className ="card-text">
+        
+            {favorite.text_content}
+            <br/>
+            <br/>
+            -{favorite.author?.name}
+            <br/>
+            <br/>
+            <button onClick={() => handleDelete(favorite.id)}><FaRegTrashAlt /></button>
+          </Card.Text>
+        </Card.Body>
       </Card.Body>
-     </Card>
+    </Card>
   )
 }
