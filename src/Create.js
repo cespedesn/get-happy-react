@@ -35,20 +35,20 @@ export default function Create({allQuotes, setAllQuotes}) {
     <div className = 'form-div'>
         
         <form className="new-quote-form" onSubmit={handleSubmit}>
-            <input 
+            <input className = "author-input"
             placeholder="Author"
             value={form.person}
             name="person"
             onChange={handleChange}
             />
-            <textarea 
+            <textarea className='textarea'
             placeholder="Write your quote here..." 
             rows={10} 
             value={form.quote}
             name="quote"
             onChange={handleChange}
             />
-            <input 
+            <input className = 'submit-btn' 
             type="submit" 
             value="Share your quote" />
         </form>

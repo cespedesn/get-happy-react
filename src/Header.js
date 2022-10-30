@@ -4,7 +4,7 @@ function Header() {
 
   return (
     <div className ='header-div'>
-        <h1>Motive-8</h1>
+        <h2>Motive-8</h2>
     </div>
   )
 }

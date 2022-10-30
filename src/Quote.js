@@ -31,8 +31,10 @@ export default function Quote({ quote }) {
       <div id='QuoteMain'> 
         <div id='boxAroundQuote'> 
         <div id='quoteDiv'>
-          <h1>{quote.quote}</h1>
-          <h2>-{quote.person}</h2>
+          <h1>{quote.text_content}</h1> 
+          {/* {quote.quote}
+          {quote.person} */}
+          <h2>-{quote.author.name}</h2>
         </div>
         
         <div id='buttonsBelowQuote'>

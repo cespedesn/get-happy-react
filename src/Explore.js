@@ -32,6 +32,7 @@ export default function Explore({allQuotes, setAllQuotes}) {
        
       <input type='text' 
        placeholder='search...'
+       
        value={searchTerm} 
        onChange={handleSearch}
        />

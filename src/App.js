@@ -18,16 +18,51 @@ function App() {
   const location = useLocation()
   const [favoriteQuoteData, setFavoriteQuoteData] = useState([])
   const [allQuotes, setAllQuotes] = useState([])
+  
 
-  useEffect(() => {
+//   useEffect(() => {
    
-   fetch("https://motivational-quote-api.herokuapp.com/quotes/random")
-      .then((r) => r.json())
-      .then(quote => {
-        setQuote(quote)
-      })
+//    fetch("https://motivational-quote-api.herokuapp.com/quotes/random")
+//       .then((r) => r.json())
+//       .then(quote => {
+//         setQuote(quote)
+//       })
       
-}, []);
+// }, [location.key]);
+
+useEffect(() => {
+   
+  const request = fetch("https://motivational-quote-api.herokuapp.com/quotes/random")
+     .then((r) => r.json())
+     .then(quote => quote);
+     request.then( quote => { 
+       return fetch("http://localhost:9292/quotes", {
+       method: 'POST',
+       headers: {
+         "Content-Type": 'application/json',
+       },
+       body: JSON.stringify(quote)
+     }).then((r) => r.json())
+     .then(quote => {
+     setQuote(quote)
+     console.log(quote, "over here man")})
+   })
+   
+}, [location.key]);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // fetch('https://motivational-quote-api.herokuapp.com/quotes')
 // .then(r => r.json())

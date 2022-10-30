@@ -9,7 +9,7 @@ function ExploreCollection({ quote }) {
 
   return (
     
-      <Card className ='explore-cards' style={ { width: '12rem', margin: '1rem'}}>
+      <Card className ='explore-cards' style={ { width: '12rem', margin: '1rem' }}>
          <Card.Body className='outer-card'>
             <Card.Body className='inner-card'>
                 <Card.Text className ="card-text">
