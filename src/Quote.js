@@ -34,7 +34,7 @@ export default function Quote({ quote }) {
           <h1>{quote.text_content}</h1> 
           {/* {quote.quote}
           {quote.person} */}
-          <h2>-{quote.author.name}</h2>
+          <h2>-{quote.author?.name}</h2>
         </div>
         
         <div id='buttonsBelowQuote'>
